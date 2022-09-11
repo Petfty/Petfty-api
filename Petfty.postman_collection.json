@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "7d7dce60-29e7-40f2-b8db-8f0aa4f851e9",
+		"name": "Petfty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19307660"
+	},
+	"item": [
+		{
+			"name": "Version 1.0",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "get auth url",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isMobile\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/connectURL",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"connectURL"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"user1\",\n    \"walletAddress\": \"dfsfqef1e23rw\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ0MDYyMjk1LCJpYXQiOjE2NDQwNTg2OTUsImp0aSI6ImZiMzQyYjI0YTE1NDQ4M2E5ZGE4MjJhYzA2YTIwN2Q2IiwidXNlcl9pZCI6Mn0.qmxwKtkJBBrU8W4PZMpTk1NEY-caUDBRYAY-46Bmj3c",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletAddress\": \"dfsfqef1e23rw\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "update user",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletAddress\": \"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5\",\n    \"desc\": \"hi i'm new user 1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users/630d95a234742a796a0359d3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"630d95a234742a796a0359d3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/users?walletAddress=0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "walletAddress",
+											"value": "0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get user (userId)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/users?userId=630d8e76956246a1f8701756",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "630d8e76956246a1f8701756"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "get user (username)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/users?username=user1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "user1"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "delete user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletAddress\": \"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/users/0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"users",
+										"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Token",
+					"item": [
+						{
+							"name": "get create token URL",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isMobile\": true,\n    \"toAddress\": \"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5\",\n    \"tokenId\": \"1018678\",\n    \"desc\": {\n        \"name\": \"pico\",\n        \"animalKind\": \"cat\",\n        \"species\": \"Abyssinian Cat\",\n        \"bornDate\": \"20201225\",\n        \"isVaccinated\": true\n    },\n    \"img\": \"https://upload.wikimedia.org/wikipedia/commons/9/9b/Gustav_chocolate.jpg\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/createTokenURL",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"createTokenURL"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ownerId\": \"630f6ed4f7575af9e3c2c6be\",\n    \"ownerAddress\": \"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5\",\n    \"tokenId\": \"1018677\",\n    \"price\": \"0.5\",\n    \"desc\": {\n        \"name\": \"pico\",\n        \"animalKind\": \"cat\",\n        \"species\": \"Abyssinian Cat\",\n        \"bornDate\": \"20201225\",\n        \"isVaccinated\": true,\n        \"isAdopted\": false,\n        \"registeredId\": \"630f6ed4f7575af9e3c2c6be\",\n        \"registeredAddress\": \"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5\",\n        \"registrationDate\": \"20220830\"\n    },\n    \"img\": \"https://upload.wikimedia.org/wikipedia/commons/9/9b/Gustav_chocolate.jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/createToken",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"createToken"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get sale token URL",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isMobile\": true,\n\t\"fromAddress\": \"\",\n    \"tokenId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/saleTokenURL",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"saleTokenURL"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update sale status",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"walletAddress\": \"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5\",\n    \"tokenId\": \"1018677\",\n    \"isOnSale\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/saleToken/1018677",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"saleToken",
+										"1018677"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get adopt token URL",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tokenId\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/purchaseTokenURL",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"purchaseTokenURL"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "adopt token",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tokenId\": \"1018677\",\n    \"desc\": {\n        \"isAdopted\": true\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/purchaseToken/1018677",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"purchaseToken",
+										"1018677"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get burn a token URL",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isMobile\": true,\n    \"tokenId\": \"1018678\",\n    \"walletAddress\": \"0x0a7d78520cfB82431f476Be5DD98C3996e61Eeb5\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/burnTokenURL",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"burnTokenURL"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "burn token",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tokenId\": \"1018677\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/burnToken/1018677",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"burnToken",
+										"1018677"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all tokens",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/info/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"info",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user's all token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/info/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"info",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get a token",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/tokens/info/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"tokens",
+										"info",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "\bKlip",
+					"item": [
+						{
+							"name": "get result",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"request_key\": \"34d496cd-6f87-4100-8314-48c489cc2e87\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/klip/connect",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"klip",
+										"connect"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
